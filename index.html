@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RAFAEL BENNETT — Live in Ireland</title>
+  <meta name="description" content="RAFAEL BENNETT — Solo • Acoustic Trio • Full Band — Live in Ireland." />
+
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --text:#f4f6f8;
+      --muted:rgba(244,246,248,.72);
+      --muted2:rgba(244,246,248,.55);
+
+      --border:rgba(255,255,255,.14);
+      --border2:rgba(255,255,255,.22);
+
+      --shadow:0 20px 60px rgba(0,0,0,.55);
+      --r:22px;
+      --max:1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      letter-spacing:.2px;
+    }
+    a{ color:inherit; }
+
+    /* ============ HERO ============ */
+    .hero{
+      min-height: 100vh;
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      background: var(--bg);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background: url("bennett.jpeg") center 25% / cover no-repeat;
+      filter: grayscale(1) contrast(1.06) brightness(.92);
+      transform: scale(1.03);
+      z-index:-2;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(70% 60% at 50% 42%, rgba(0,0,0,.15) 0%, rgba(0,0,0,.78) 70%),
+        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.82));
+      z-index:-1;
+    }
+
+    .heroInner{
+      width:min(var(--max), 92vw);
+      padding: 28px 0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      gap: 14px;
+    }
+
+    .rafael{
+      margin:0;
+      font-weight:300;
+      font-size: clamp(14px, 1.55vw, 20px);
+      letter-spacing: .55em;
+      text-transform: uppercase;
+      color: rgba(244,246,248,.70);
+      padding-left: .55em;
+    }
+
+    .bennett{
+      margin:0;
+      font-weight:800;
+      font-size: clamp(44px, 7.2vw, 108px);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      line-height: 1.02;
+      padding-left: .22em;
+      text-shadow: 0 18px 55px rgba(0,0,0,.62);
+    }
+
+    .subline{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: clamp(13px, 1.55vw, 16px);
+      line-height: 1.75;
+      max-width: 72ch;
+    }
+
+    .subline .dot{
+      opacity:.55;
+      padding: 0 .45em;
+    }
+
+    .actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top: 10px;
+    }
+
+    .btn{
+      text-decoration:none;
+      font-weight:800;
+      font-size: 13px;
+      letter-spacing:.02em;
+
+      padding: 12px 18px;
+      border-radius: 999px;
+
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.26);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+
+      transition: transform .18s, background .18s, border-color .18s;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.08);
+      border-color: var(--border2);
+    }
+    .btn.primary{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.28);
+    }
+    .btn.primary:hover{
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.34);
+    }
+
+    /* ============ CONTENT ============ */
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 46px 18px 86px;
+    }
+
+    .section{
+      margin-top: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .section h2{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .muted{
+      margin:0;
+      color: var(--muted2);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .formats{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 920px){ .formats{ grid-template-columns: 1fr; } }
+
+    .card{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(0,0,0,.14);
+      backdrop-filter: blur(6px);
+    }
+    .card strong{
+      display:block;
+      font-size: 13px;
+      margin-bottom: 8px;
+      letter-spacing:.04em;
+    }
+    .card span{
+      display:block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+      backdrop-filter: blur(6px);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(244,246,248,.85);
+    }
+
+    /* ============ ABOUT ============ */
+    #about{ padding: 22px; }
+
+    .aboutGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items:start;
+      margin-top: 10px;
+    }
+    @media (max-width: 920px){
+      .aboutGrid{ grid-template-columns: 1fr; }
+    }
+
+    .aboutCopy{ max-width: 76ch; }
+
+    .aboutLead{
+      margin: 0 0 12px;
+      line-height: 1.75;
+      color: rgba(244,246,248,.78);
+    }
+
+    .aboutList{
+      margin: 0 0 12px;
+      padding-left: 18px;
+      color: rgba(244,246,248,.62);
+      line-height: 1.7;
+    }
+    .aboutList li{ margin: 6px 0; }
+
+    .aboutHighlights{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .aboutSide{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+
+    .aboutBox{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+      border-radius: 18px;
+      padding: 14px;
+      backdrop-filter: blur(6px);
+    }
+
+    .aboutBox strong{
+      display:block;
+      font-size: 13px;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .aboutBox span{
+      display:block;
+      color: rgba(244,246,248,.62);
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 2px 0;
+    }
+
+    /* ============ VIDEOS (official embeds) ============ */
+    .videoGrid{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 12px;
+      align-items:start;
+    }
+    @media (max-width: 920px){ .videoGrid{ grid-template-columns: 1fr; } }
+
+    .player{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      overflow:hidden;
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(6px);
+    }
+
+    .playerTop{
+      padding: 12px 14px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .now{
+      font-size: 12px;
+      color: rgba(244,246,248,.78);
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    /* make iframes responsive + consistent */
+    .player iframe,
+    .miniPlayer iframe{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      display:block;
+      background:#000;
+    }
+
+    .videoSide{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+
+    .miniPlayer{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      overflow:hidden;
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(6px);
+    }
+
+    .miniTop{
+      padding: 10px 12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+
+    .miniTop strong{
+      display:block;
+      font-size: 12px;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      color: rgba(244,246,248,.82);
+    }
+
+    .miniTop span{
+      display:block;
+      font-size: 12px;
+      color: rgba(244,246,248,.55);
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
+    /* ============ CONTACT ============ */
+    .bookBtns{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .bbtn{
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(8px);
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+      transition:.18s;
+    }
+    .bbtn:hover{
+      background: rgba(255,255,255,.08);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.24);
+    }
+
+    footer{
+      margin-top: 20px;
+      text-align:center;
+      color: rgba(244,246,248,.55);
+      font-size: 12px;
+    }
+
+    /* YouTube fallback overlay (premium) */
+.embedWrap{
+  position:relative;
+}
+
+.embedFallback{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:18px;
+  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.75));
+}
+
+.fallbackBox{
+  max-width: 420px;
+  border:1px solid rgba(255,255,255,.16);
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+.fallbackBox strong{
+  display:block;
+  font-size:14px;
+  letter-spacing:.02em;
+  margin-bottom:6px;
+}
+
+.fallbackBox p{
+  margin:0 0 12px;
+  color: rgba(244,246,248,.68);
+  font-size:13px;
+  line-height:1.5;
+}
+
+.fallbackBtn{
+  display:inline-block;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.10);
+  padding:12px 16px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:13px;
+}
+.fallbackBtn:hover{
+  background: rgba(255,255,255,.16);
+}
+
+.embedFallback { display: none !important; }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="heroInner">
+      <h1 class="rafael">RAFAEL</h1>
+      <h2 class="bennett">BENNETT</h2>
+
+      <p class="subline">
+        Solo <span class="dot">•</span> Acoustic Trio <span class="dot">•</span> Full Band
+        <br>
+        Limited season in Ireland
+      </p>
+
+      <div class="actions">
+        <a class="btn primary" href="#videos">Watch Live</a>
+        <a class="btn" href="#contact">Bookings</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2>ABOUT</h2>
+
+      <div class="aboutGrid">
+        <div class="aboutCopy">
+          <p class="aboutLead">
+            Rafael Bennett is a Brazilian singer, guitarist and live performer booking a <b>limited season in Ireland</b>.
+            He has performed internationally — including <b>Canada</b> — delivering everything from intimate acoustic sets
+            to full band shows.
+          </p>
+
+          <ul class="aboutList">
+            <li><b>What venues get:</b> reliable, professional delivery and strong audience connection.</li>
+            <li><b>Style:</b> international classics + modern anthems, built for sing-alongs.</li>
+            <li><b>Formats:</b> Solo • Acoustic Trio • Full Band (scaled to the room and budget).</li>
+            <li><b>Background:</b> award-winning projects and recognized live acts (details available on request).</li>
+          </ul>
+
+          <div class="aboutHighlights">
+            <span class="pill">International touring artist</span>
+            <span class="pill">Canada & South America</span>
+            <span class="pill">Award-winning projects</span>
+            <span class="pill">Season in Ireland</span>
+          </div>
+        </div>
+
+        <div class="aboutSide">
+          <div class="aboutBox">
+            <strong>Set Options</strong>
+            <span>Unplugged Sessions</span>
+            <span>Quintessence</span>
+            <span>Rock Bands</span>
+          </div>
+
+          <div class="aboutBox">
+            <strong>Best For</strong>
+            <span>Pubs & late sessions</span>
+            <span>Corporate / wine bars</span>
+            <span>Venues & festivals</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATS -->
+    <section class="section" id="formats">
+      <h2>Performance Formats</h2>
+      <p class="muted">The venue chooses the format that fits the room and budget.</p>
+
+      <div class="formats">
+        <div class="card">
+          <strong>Solo</strong>
+          <span>Voice & acoustic guitar — ideal for midweek sessions and intimate rooms.</span>
+        </div>
+
+        <div class="card">
+          <strong>Acoustic Trio</strong>
+          <span>Voice, guitar & percussion — compact setup with bigger energy for busy pubs.</span>
+        </div>
+
+        <div class="card">
+          <strong>Full Band</strong>
+          <span>High-energy electric show — best for venues, festivals and late-night crowds.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REPERTOIRE -->
+    <section class="section" id="repertoire">
+      <h2>Repertoire Highlights</h2>
+      <p class="muted">International repertoire (Ireland-facing set — no Brazilian songs).</p>
+
+      <div class="pills" aria-label="Artists">
+        <span class="pill">Oasis</span><span class="pill">U2</span><span class="pill">Queen</span><span class="pill">The Beatles</span>
+        <span class="pill">The Killers</span><span class="pill">Coldplay</span><span class="pill">Radiohead</span><span class="pill">Pink Floyd</span>
+        <span class="pill">The Cranberries</span><span class="pill">Foo Fighters</span><span class="pill">AC/DC</span><span class="pill">Guns N’ Roses</span>
+        <span class="pill">Led Zeppelin</span><span class="pill">Stevie Wonder</span><span class="pill">Elton John</span><span class="pill">Amy Winehouse</span>
+      </div>
+    </section>
+
+    <!-- VIDEOS (official YouTube embeds) -->
+    <section class="section" id="videos">
+      <h2>Live Videos</h2>
+      <p class="muted">Official YouTube embeds (stable). Replace the two placeholders when you pick the clips.</p>
+
+      <div class="videoGrid">
+        <!-- MAIN VIDEO (with fallback overlay) -->
+<div class="player playerMain">
+  <div class="playerTop">
+    <div class="now">Featured: Full Band</div>
+    <div class="now" style="color:rgba(244,246,248,.55)">If blocked → opens on YouTube</div>
+  </div>
+
+  <div class="embedWrap">
+    <iframe
+      src="https://www.youtube.com/embed/YHYDnl1R1Pw"
+      title="Rafael Bennett — Heavens Fire"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+
+    <!-- Fallback overlay -->
+    <div class="embedFallback">
+      <div class="fallbackBox">
+        <strong>Watch this clip on YouTube</strong>
+        <p>Some videos can’t play embedded due to YouTube restrictions.</p>
+        <a class="fallbackBtn" href="https://www.youtube.com/watch?v=YHYDnl1R1Pw" target="_blank" rel="noopener">
+          Open on YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <!-- SIDE VIDEOS -->
+        <div class="videoSide">
+          <div class="miniPlayer">
+            <div class="miniTop">
+              <strong>Acoustic</strong>
+              <span>Pub vibe / wine bar / corporate</span>
+            </div>
+            <iframe
+              src="https://www.youtube.com/embed/ZiXZmIdAWRM?si=qKum9FV_E6boOeFS"
+              title="Rafael Bennett — Quintessence"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="miniPlayer">
+            <div class="miniTop">
+              <strong>Premium Band/ Corporate</strong>
+              <span>For luxury events</span>
+            </div>
+            <iframe
+              src="https://www.youtube.com/embed/2rKFn0XGBxo?si=H43vFDK63B6rmi3Y"
+              title="Rafael Bennett — Full Band"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <h2>Bookings</h2>
+      <p class="muted">Fast response. Include venue name, date/time and preferred format (Solo / Trio / Full Band).</p>
+
+      <div class="bookBtns">
+        <!-- EDIT THESE -->
+        <a class="bbtn" href="mailto:lucasrdutra2@gmail.com?subject=Booking%20Request%20—%20Rafael%20Bennett">Email</a>
+        <a class="bbtn" href="tel:+353833820049">Call</a>
+        <a class="bbtn" href="https://wa.me/353831833098" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="bbtn" href="https://instagram.com/virtualbenet/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </section>
+
+    <footer>© <span id="yr"></span> RAFAEL BENNETT — Live in Ireland</footer>
+  </main>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
